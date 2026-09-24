@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ganesh R - Resume | AWS Data Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <style>
+    :root {
+      --primary: #0f172a;
+      --accent: #0284c7;
+      --text: #1e293b;
+      --muted: #475569;
+      --border: #e2e8f0;
+      --bg: #f8fafc;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.5;
+      padding: 2rem 1rem;
+    }
+
+    .resume-container {
+      max-width: 850px;
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 3rem;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    }
+
+    .top-actions {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 2rem;
+    }
+
+    .btn-action {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--accent);
+      color: #fff;
+      padding: 0.6rem 1.2rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      border: none;
+      cursor: pointer;
+    }
+
+    .btn-action.secondary {
+      background: #f1f5f9;
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+
+    /* Resume Header */
+    .header {
+      border-bottom: 2px solid #0f172a;
+      padding-bottom: 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .name {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: #0f172a;
+      letter-spacing: -0.02em;
+    }
+
+    .role {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--accent);
+      margin-bottom: 0.75rem;
+    }
+
+    .contact-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.25rem;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .contact-bar a {
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    .contact-bar i {
+      color: var(--accent);
+      margin-right: 0.25rem;
+    }
+
+    /* Sections */
+    .section {
+      margin-bottom: 1.5rem;
+    }
+
+    .section-heading {
+      font-size: 1.05rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #0f172a;
+      border-bottom: 1.5px solid var(--border);
+      padding-bottom: 0.35rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .summary-text {
+      font-size: 0.92rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    /* Experience */
+    .job-item {
+      margin-bottom: 1.25rem;
+    }
+
+    .job-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 0.25rem;
+    }
+
+    .job-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #0f172a;
+    }
+
+    .job-date {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--muted);
+    }
+
+    .job-location {
+      font-size: 0.85rem;
+      color: var(--muted);
+      text-align: right;
+    }
+
+    .bullets {
+      padding-left: 1.25rem;
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-top: 0.4rem;
+    }
+
+    .bullets li {
+      margin-bottom: 0.35rem;
+      line-height: 1.5;
+    }
+
+    /* Skills Grid */
+    .skills-block {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      font-size: 0.9rem;
+    }
+
+    .skills-block strong {
+      display: block;
+      color: #0f172a;
+      margin-bottom: 0.25rem;
+    }
+
+    .skills-block p {
+      color: var(--muted);
+      margin-bottom: 0.5rem;
+    }
+
+    .skills-block ul {
+      list-style-type: square;
+      padding-left: 1.25rem;
+      color: var(--muted);
+    }
+
+    /* Achievements */
+    .achieve-list {
+      padding-left: 1.25rem;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .achieve-list li {
+      margin-bottom: 0.4rem;
+    }
+
+    /* Print Styles */
+    @media print {
+      body { background: #fff; padding: 0; }
+      .resume-container { box-shadow: none; padding: 0; max-width: 100%; }
+      .top-actions { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="resume-container">
+    <div class="top-actions">
+      <a href="index.html" class="btn-action secondary"><i class="fa-solid fa-arrow-left"></i> Back to Portfolio</a>
+      <button onclick="window.print()" class="btn-action"><i class="fa-solid fa-print"></i> Print / Save as PDF</button>
+    </div>
+
+    <!-- Header -->
+    <div class="header">
+      <h1 class="name">Ganesh R</h1>
+      <h2 class="role">Data Engineer</h2>
+      <div class="contact-bar">
+        <span><i class="fa-solid fa-envelope"></i> <a href="mailto:ganeshraman110@gmail.com">ganeshraman110@gmail.com</a></span>
+        <span><i class="fa-solid fa-phone"></i> +91 9361889414</span>
+        <span><i class="fa-solid fa-location-dot"></i> Bangalore, India</span>
+        <span><i class="fa-brands fa-linkedin"></i> <a href="https://linkedin.com/in/ganesh-r-a32a01393" target="_blank">linkedin.com/in/ganesh-r-a32a01393</a></span>
+      </div>
+    </div>
+
+    <!-- Summary -->
+    <div class="section">
+      <h3 class="section-heading">Summary</h3>
+      <p class="summary-text">
+        AWS Data Engineer with 2.6+ years of hands-on experience building and operating production-grade ETL pipelines across healthcare and enterprise domains. Strong expertise in AWS Glue, EMR, PySpark, SQL, and S3 for large-scale batch data processing and analytics. Experienced in end-to-end pipeline ownership, data modeling, performance optimization, and supporting business-critical reporting systems.
+      </p>
+    </div>
+
+    <!-- Experience -->
+    <div class="section">
+      <h3 class="section-heading">Experience</h3>
+
+      <div class="job-item">
+        <div class="job-header">
+          <div>
+            <span class="job-title">Data Engineer, Analytix hub ai</span>
+          </div>
+          <div>
+            <span class="job-date">03/2026 – Present</span> | <span class="job-location">Chennai</span>
+          </div>
+        </div>
+        <ul class="bullets">
+          <li>Designed and developed scalable data pipelines to support analytics, reporting, and AI/ML initiatives.</li>
+          <li>Built and maintained ETL/ELT frameworks for ingesting data from multiple source systems.</li>
+          <li>Developed and optimised data models, data warehouses, and data lakes for enterprise reporting.</li>
+          <li>Ensured data quality, governance, security, and compliance across data platforms.</li>
+          <li>Worked with structured and semi-structured datasets to enable business intelligence and advanced analytics.</li>
+          <li>Collaborated with business stakeholders to gather requirements and translate them into technical solutions.</li>
+        </ul>
+      </div>
+
+      <div class="job-item">
+        <div class="job-header">
+          <div>
+            <span class="job-title">Cloud Engineer, Dataman Computer Systems Pvt Ltd</span>
+          </div>
+          <div>
+            <span class="job-date">04/2025 – 01/2026</span> | <span class="job-location">Bangalore</span>
+          </div>
+        </div>
+        <ul class="bullets">
+          <li>Engineered and maintained scalable ETL pipelines for Hospital Management Information Systems (HMIS), processing patient, billing, pharmacy, laboratory, and operational datasets.</li>
+          <li>Designed and implemented automated data ingestion and transformation workflows using AWS Glue, PySpark, SQL, S3, and Step Functions, enabling reliable healthcare analytics and reporting.</li>
+        </ul>
+      </div>
+
+      <div class="job-item">
+        <div class="job-header">
+          <div>
+            <span class="job-title">Software Engineer, Anunta Technology Management Services Public Ltd</span>
+          </div>
+          <div>
+            <span class="job-date">09/2023 – 03/2025</span> | <span class="job-location">Chennai</span>
+          </div>
+        </div>
+        <ul class="bullets">
+          <li>Designed and developed batch ETL pipelines using AWS Glue and PySpark to process application and transactional data from multiple source systems.</li>
+          <li>Architected and maintained an Amazon S3 data lake with raw, processed, and curated layers, following standardized folder structures and naming conventions.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Education -->
+    <div class="section">
+      <h3 class="section-heading">Education</h3>
+      <div class="job-header">
+        <div>
+          <span class="job-title">Bachelor of Technology (B.Tech), Information Technology</span>
+          <p style="font-size:0.9rem; color:var(--muted)">Meenakshi Sundararajan Engineering College</p>
+        </div>
+        <div>
+          <span class="job-date">08/2019 – 04/2023</span> | <span class="job-location">Chennai</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Skills -->
+    <div class="section">
+      <h3 class="section-heading">Skills</h3>
+      <div class="skills-block">
+        <div>
+          <strong>Technical Skills</strong>
+          <p>SQL, Python, PySpark</p>
+          <strong>Cloud & Data Engineering</strong>
+          <p>AWS Glue, Amazon S3, AWS EMR, AWS Lambda, Step Functions</p>
+          <strong>Orchestration & Warehousing</strong>
+          <p>Apache Airflow, Snowflake, Amazon Redshift</p>
+        </div>
+        <div>
+          <strong>Industry Skills</strong>
+          <ul>
+            <li>Healthcare Data Systems (HMIS)</li>
+            <li>Cloud-Based Data Engineering</li>
+            <li>Data Warehousing & Analytics</li>
+            <li>Large-Scale Data Processing</li>
+            <li>Data Quality & Validation</li>
+            <li>ETL & Data Pipeline Architecture</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Achievements -->
+    <div class="section">
+      <h3 class="section-heading">Achievements</h3>
+      <ul class="achieve-list">
+        <li>Recognized for delivering stable and scalable ETL pipelines supporting mission-critical healthcare and enterprise data platforms.</li>
+        <li>Appreciated for automation of data workflows that reduced manual intervention and improved operational reliability.</li>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>
