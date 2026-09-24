@@ -4,22 +4,21 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ganesh R | AWS Data Engineer & ETL Specialist</title>
-  <meta name="description" content="Portfolio of Ganesh R, an AWS Data Engineer with 2.6+ years of hands-on experience in PySpark, AWS Glue, S3 Data Lakes, EMR, Snowflake, and Redshift building scalable ETL pipelines." />
-  <meta name="keywords" content="Ganesh R, Data Engineer, AWS Data Engineer, PySpark, AWS Glue, ETL Pipeline, Data Lake, S3, EMR, Snowflake, Redshift, Healthcare Data" />
+  <meta name="description" content="Portfolio of Ganesh R, an AWS Data Engineer with 2.6+ years experience in PySpark, AWS Glue, S3 Data Lakes, EMR, Snowflake, and Redshift." />
+  <meta name="keywords" content="Ganesh R, Data Engineer, AWS Data Engineer, PySpark, AWS Glue, ETL Pipeline, Data Lake, S3, EMR, Snowflake, Redshift" />
   <meta name="author" content="Ganesh R" />
 
-  <!-- Open Graph Meta Tags for Social Sharing -->
+  <!-- Open Graph Meta Tags -->
   <meta property="og:title" content="Ganesh R | AWS Data Engineer" />
-  <meta property="og:description" content="2.6+ years hands-on experience building and operating production-grade ETL pipelines across healthcare and enterprise domains." />
+  <meta property="og:description" content="2.6+ years hands-on experience building production-grade ETL pipelines across healthcare and enterprise domains." />
   <meta property="og:type" content="website" />
 
-  <!-- Google Fonts & Font Awesome Icons -->
+  <!-- Fonts & Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
-  <!-- Stylesheet -->
   <link rel="stylesheet" href="style.css" />
 </head>
 <body class="dark-theme">
@@ -69,8 +68,8 @@
           </div>
 
           <h1 class="hero-title">
-            Hi, I'm <span class="gradient-text">Ganesh R</span><br />
-            <span class="typed-role" id="typedRole">AWS Data Engineer</span>
+            <span class="hero-intro">Hi, I'm <span class="gradient-text">Ganesh R</span></span>
+            <span class="hero-headline">AWS Data Engineer</span>
           </h1>
 
           <p class="hero-subtitle">
@@ -87,7 +86,7 @@
               <i class="fa-solid fa-envelope"></i> Contact Me
             </a>
             <a href="resume.html" target="_blank" class="btn btn-outline">
-              <i class="fa-solid fa-arrow-up-right-from-square"></i> Full Resume
+              <i class="fa-solid fa-file-pdf"></i> Resume (PDF)
             </a>
           </div>
 
@@ -122,19 +121,23 @@
               </button>
             </div>
             <div class="terminal-body">
-              <pre><code class="language-python"><span class="code-comment"># AWS Glue PySpark Data Lake Pipeline</span>
+<pre><code class="language-python"><span class="code-comment"># AWS Glue PySpark Data Lake Pipeline</span>
 <span class="code-keyword">from</span> awsglue.context <span class="code-keyword">import</span> GlueContext
 <span class="code-keyword">from</span> pyspark.sql <span class="code-keyword">import</span> functions <span class="code-keyword">as</span> F
 
 <span class="code-keyword">def</span> <span class="code-func">transform_curated_layer</span>(raw_df):
-    <span class="code-comment"># Standardize, clean & validate schema</span>
-    curated = raw_df       .filter(F.col(<span class="code-str">"record_status"</span>) == <span class="code-str">"VALID"</span>)       .withColumn(<span class="code-str">"etl_timestamp"</span>, F.current_timestamp())       .repartition(<span class="code-str">"year"</span>, <span class="code-str">"month"</span>)
+    <span class="code-comment"># Data cleansing & schema validation</span>
+    curated = raw_df.filter(
+        F.col(<span class="code-str">"status"</span>) == <span class="code-str">"VALID"</span>
+    ).withColumn(
+        <span class="code-str">"processed_at"</span>, F.current_timestamp()
+    ).repartition(<span class="code-str">"year"</span>, <span class="code-str">"month"</span>)
     
     <span class="code-keyword">return</span> curated
 
-<span class="code-comment"># Write Parquet to S3 Medallion Storage</span>
-curated.write   .mode(<span class="code-str">"overwrite"</span>)   .parquet(<span class="code-str">"s3://production-data-lake/curated/"</span>)
-<span class="code-func">print</span>(<span class="code-str">"✓ Pipeline executed: 0 failures, 100% data quality"</span>)</code></pre>
+<span class="code-comment"># Write Parquet to S3 Medallion Lakehouse</span>
+curated.write   .mode(<span class="code-str">"overwrite"</span>)   .parquet(<span class="code-str">"s3://data-lake/curated/"</span>)
+<span class="code-func">print</span>(<span class="code-str">"✓ Pipeline executed: 100% data quality"</span>)</code></pre>
             </div>
             <div class="terminal-footer">
               <span class="status-indicator"><i class="fa-solid fa-circle-check"></i> Step Functions Orchestrated</span>
@@ -279,7 +282,7 @@ curated.write   .mode(<span class="code-str">"overwrite"</span>)   .parquet(<spa
                 <span class="skill-level">Storage & Medallion Design</span>
               </div>
             </div>
-            <p>Raw, Processed, and Curated layered architectures with Parquet/ORC compression.</p>
+            <p>Raw, Processed, and Curated layered architectures with Parquet compression.</p>
             <div class="skill-tags">
               <span>S3 Lake</span><span>Parquet</span><span>Lifecycle Rules</span>
             </div>
@@ -356,7 +359,7 @@ curated.write   .mode(<span class="code-str">"overwrite"</span>)   .parquet(<spa
             </div>
             <p>Patient, billing, pharmacy, laboratory, and clinical datasets processing & compliance.</p>
             <div class="skill-tags">
-              <span>HMIS</span><span>HIPAA Compliant</span><span>Clinical Data</span>
+              <span>HMIS</span><span>Clinical Data</span><span>Validation</span>
             </div>
           </div>
 
@@ -512,8 +515,8 @@ curated.write   .mode(<span class="code-str">"overwrite"</span>)   .parquet(<spa
                   <span>Auto-retry Orchestration</span>
                 </div>
                 <div class="metric-item">
-                  <strong>HIPAA Ready</strong>
-                  <span>De-identified Clinical Data</span>
+                  <strong>Healthcare Ready</strong>
+                  <span>Validated Clinical Datasets</span>
                 </div>
               </div>
               <div class="project-tags">
@@ -735,10 +738,8 @@ curated.write   .mode(<span class="code-str">"overwrite"</span>)   .parquet(<spa
     </div>
   </footer>
 
-  <!-- Toast Notification for Copy / Actions -->
   <div id="toast" class="toast">Message copied to clipboard!</div>
 
-  <!-- Scripts -->
   <script src="script.js"></script>
 </body>
 </html>
