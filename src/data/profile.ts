@@ -77,7 +77,7 @@ export const PROFILE: ProfileData = {
     "I am a Data Engineer focused on building scalable and reliable data pipelines and cloud-based data platforms. My experience includes AWS data engineering, ETL/ELT, PySpark, SQL, data lakes, data warehousing, data quality, and analytics across enterprise systems and healthcare domains (HMIS).",
 
   summary:
-    "Data Engineer with 2.6+ years of hands-on experience building and operating production-grade ETL pipelines across healthcare and enterprise domains. Strong expertise in AWS Glue, EMR, PySpark, SQL, and S3 for large-scale batch data processing and analytics.",
+    "Data Engineer with 3+ years of hands-on experience building and operating production-grade ETL pipelines across healthcare and enterprise domains. Strong expertise in AWS Glue, EMR, PySpark, SQL, and S3 for large-scale batch data processing and analytics.",
 
   experience: [
     {
