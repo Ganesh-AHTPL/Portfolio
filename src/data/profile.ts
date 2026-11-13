@@ -63,8 +63,8 @@ export const PROFILE: ProfileData = {
   phone: "9361889414",
   location: "Bangalore, India",
   linkedin: "https://linkedin.com/in/ganesh-r-a32a01393",
-  githubUsername: "Ganesh-AHTPL",
-  githubUrl: "https://github.com/Ganesh-AHTPL",
+  githubUsername: "ganesh2001-11",
+  githubUrl: "https://github.com/ganesh2001-11",
 
   hero: {
     badge: "DATA ENGINEER",

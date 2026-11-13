@@ -10,7 +10,7 @@ A clean, modern, recruiter-friendly personal portfolio built strictly with **Rea
 - **Bundler:** Vite
 - **Styling:** Tailwind CSS (with clean Dark/Light theme support)
 - **Icons:** Lucide React
-- **Hosting:** GitHub Pages (`https://ganesh-ahtpl.github.io/Portfolio/`)
+- **Hosting:** GitHub Pages (`https://ganesh2001-11.github.io/portfolio/`)
 
 ---
 
